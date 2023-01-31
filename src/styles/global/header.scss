@@ -1,0 +1,189 @@
+@import "./global.scss";
+
+
+header {
+    
+
+
+  $font-size: clamp(1.5rem, 1.8vw, 1.9rem);
+  $font-weight: 500;
+  $sub-font-size: 15px;
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        background-color: $black-l;
+        height: 65px;
+        gap: 7px;
+        padding: 0 9px;
+
+    
+
+        > .title-container {
+
+        
+            > a {
+              display: flex;
+              align-items: center;
+              gap: $gap;
+        
+              img {
+                width: 55px;
+                height: 55px;
+              }
+          
+              h1 {
+                color: white;
+                font-size: $font-size;
+                font-weight: $font-weight;
+              }
+            }
+        
+          }
+        
+          > .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: clamp(25px, 2vw, 70px);
+            margin: 0 auto;
+        
+            > a {
+              font-size: $font-size;
+              color: $white;
+              font-weight: $font-weight;
+            }
+          }
+        
+        
+        
+          > a.listen {
+            @include rounded-button;
+            background-color: $accent;
+            &:hover {background-color: white; color: $black-l}
+          }
+        
+          > a.club {
+            @include rounded-button;
+            background-color: #2b2626;
+            &:hover {background-color: white; color: $black-l}
+          }
+
+          // Hide text (just show icon) on smaller screens
+          > a.club,
+          > a.listen {
+            @media (max-width: 720px) {
+              aspect-ratio: 1;
+              width: 35px;
+              box-sizing: border-box;
+              > h1 {
+                display: none;
+              }
+            }
+          }
+        
+    }
+
+    .playing-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: $accent;
+      height: 50px;
+      gap: 7px;
+      padding: 0 9px;
+      border-bottom: solid white;
+      border-top: solid white;
+      > a {
+        display: flex;
+        align-items: center;
+        gap: $gap;
+      }
+  
+      i {
+          margin: 0;
+          font-size: $font-size;
+          color: white;
+      }
+    
+      h1 {
+          color: white;
+          font-size: $font-size;
+          font-weight: $font-weight;
+          align-self: baseline;
+      }
+  
+      .main-text {
+          color: white;
+          font-family: 'Nunito', sans-serif;
+      }
+  
+      .sub-text {
+          color: white;
+          font-size: $sub-font-size;
+          font-weight: $font-weight;
+          align-self: flex-end;
+      }
+  
+    }
+
+    .banner-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: black;
+      height: 92px;
+      gap: 7px;
+      padding: 0 9px;
+
+      > a {
+        display: flex;
+        align-items: center;
+        gap: $gap;
+      }
+  
+      img {
+        height: 90%;
+        width: 268.8px;
+        margin: 0;
+        font-size: $font-size;
+        color: white;
+      }
+    
+      h1 {
+          color: white;
+          font-size: $font-size;
+          font-weight: $font-weight;
+          align-self: baseline;
+      }
+  
+      .main-text {
+          color: white;
+          font-family: 'Nunito', sans-serif;
+      }
+  
+      .sub-text {
+          color: white;
+          font-size: $sub-font-size;
+          font-weight: $font-weight;
+          align-self: flex-end;
+      }
+  
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%
+    }
+  
+}
