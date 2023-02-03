@@ -9,8 +9,8 @@ import { useState } from 'react';
 export default function OurTeam() {
 
     return (
-       <body>
+       <div>
         <h1>Our Team</h1>
-       </body>
+       </div>
     )
 }

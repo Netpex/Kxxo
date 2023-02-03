@@ -9,8 +9,8 @@ import { useState } from 'react';
 export default function NotFound() {
 
     return (
-       <body>
+       <div>
         <h1>404</h1>
-       </body>
+       </div>
     )
 }

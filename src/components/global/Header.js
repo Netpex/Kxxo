@@ -18,23 +18,30 @@ export default function Header() {
 
     const isSticky = (e) => {
         const header = document.querySelector('.header-container');
-        const header2 = document.querySelector('.playing-container');
         const scrollTop = window.scrollY;
-        console.log(scrollTop)
-        if (scrollTop >= 90) { 
-            header.classList.add('sticky')
-            header2.classList.add('sticky')
+        console.log(scrollTop);
+        if (92-scrollTop > 0) {
+            document.querySelector(".banner-container").style.height = 92-scrollTop+"px";
+            document.querySelector(".top-banner").style.width = 268.8-scrollTop+"px";
         } else {
+            document.querySelector(".banner-container").style.height = 0+"px"
+        };
+        if (scrollTop >= 70) { 
+            document.querySelector(".title-container").classList.remove('hidden')
+            document.querySelector(".title-container").classList.add('loaded')
+            header.classList.add('sticky')
+        } else {
+            document.querySelector(".title-container").classList.add('hidden')
+            document.querySelector(".title-container").classList.remove('loaded')
             header.classList.remove('sticky')
-            header2.classList.remove('sticky')
-        }
+        };
     };
 
     return (
         <header>
 
             <div className="banner-container">
-            <img src={process.env.PUBLIC_URL + "/images/banner.jpg"} alt="banner"/>
+            <img className="top-banner" src={process.env.PUBLIC_URL + "/images/banner.jpg"} alt="banner"/>
             </div>
 
             <div className="playing-container">
@@ -43,7 +50,7 @@ export default function Header() {
             </div>
 
             <div className="header-container">
-                <div className="title-container">
+                <div className="title-container hidden">
                     <Link to="/">
                         <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="Logo"/>
                         <h1>Play KXXO 96.1</h1>

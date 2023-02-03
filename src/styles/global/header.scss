@@ -19,12 +19,10 @@ header {
         height: 65px;
         gap: 7px;
         padding: 0 9px;
-
+        transition: opacity 2s;
     
 
         > .title-container {
-
-        
             > a {
               display: flex;
               align-items: center;
@@ -182,8 +180,29 @@ header {
 
     .sticky {
       position: fixed;
+      box-sizing: border-box;
       top: 0;
       width: 100%
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .hidden {
+      animation: fadeOut 1s;
+      opacity: 0;
+    }
+
+    .loaded {
+      animation: fadeIn 1s; 
+      opacity: 1;
     }
   
 }
