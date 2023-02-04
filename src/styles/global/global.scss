@@ -2,6 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,900&display=swap');
+@font-face {
+    font-family: 'OptimaNova';
+    src: local('OptimaNova'), url(../../../public/fonts/OptimaNovaLTProBold.otf) format('opentype');
+    /* other formats include: 'woff2', 'truetype, 'opentype',
+                              'embedded-opentype', and 'svg' */
+  }
 
 @mixin font {
     font-family: 'Prompt', sans-serif;
