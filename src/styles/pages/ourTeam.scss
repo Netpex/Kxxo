@@ -10,6 +10,7 @@ $sub-font-size: 26px;
     margin: 0 auto;
     max-width: 1280px;
     font-family: 'Nunito', sans-serif;
+    
     > .team-container {
         justify-content: left;
         width: 75%;
@@ -45,18 +46,78 @@ $sub-font-size: 26px;
                 margin-bottom: 10px;
                 cursor: pointer;
                 display: flex;
-                
+                flex-wrap: wrap;
+
+                @keyframes rotation {
+                    0% { rotate: 0deg; padding: 12.5px 0 7.5px 10px; }
+                    100% { rotate: 180deg; padding:15px 10px 0 0;  }
+                  }
+
+                  @keyframes returnrot {
+                    0% { rotate: -180deg; padding:15px 10px 0 0;  }
+                    100% { rotate: 0deg; padding: 12.5px 0 7.5px 10px; }
+                  }
+
+                .hidden{ 
+                    max-height: 0px !important;
+                    transition: max-height 0.7s ease-in;
+                }
+
+                .grow{
+                    max-height: 200px !important;
+                    transition: max-height 1s ease-in;
+                }
+
+                .break {
+                    width: 100%;
+                  }
+
                 i {
-                    padding: 15px 0 5px 10px;
+                    padding: 12.5px 0 7.5px 10px;
                     font-size: $sub-font-size;
-                    color: $gray; 
+                    color: $gray-d; 
+                }
+
+                .rotate-0 {
+                    animation: returnrot 1s;
+                    padding: 12.5px 0 7.5px 10px;
+                }
+
+                .rotate-180 {
+                    animation: rotation 1s;
+                    rotate: 180deg;
+                    padding:15px 10px 0 0; 
                 }
     
                 h5 {
                     padding: 10px 10px 10px 10px;
                     margin: 0;
-                    color: $gray;
+                    color: $gray-d;
                     font-size: $sub-font-size;
+                }
+                > .information-container {
+                    display: inline-block;
+                    max-height: 0;
+                    overflow: hidden;
+
+                    img {
+                        margin: 0 5px 5px 5px;
+                        float:left;
+                        border-radius: 25px;
+                        width: inherit;
+                        height: 150px;
+                    }
+
+                    h3 {
+                        font-size: $sub-font-size;
+                        color: $gray;
+                        margin: 0;
+                    }
+
+                    p {
+                        font-size: $sub-font-size/2;
+                        margin: 0;
+                    }
                 }
             }
         }
